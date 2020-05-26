@@ -1,5 +1,4 @@
-#inlcuding libraries
-#install.packages("kernlab")
+#Inlcuding libraries
 library(naivebayes)
 library(dplyr)
 library(ggplot2)
@@ -102,7 +101,7 @@ prop.table(table(agreement))
 pred_vanilla<-predict(model_vanilla,newdata=test_sal)
 mean(pred_vanilla==test_sal$Salary) # 83.90
 
-#Using RBF Dot Function
+#Visualising the model using RBF Dot Function
 model_rfdot<-ksvm(train_sal$Salary~.,data= train_sal,kernel = "rbfdot")
 Salary_prediction1 <- predict(model_rfdot, test_sal)#Checking the predictions done on train set
 table(Salary_prediction1,test_sal$Salary)#Checking its accuracy
